@@ -1,4 +1,12 @@
 @import "tailwindcss";
 
-:root {
+@custom-variant theme-gray (&:where(.theme-gray, .theme-gray *));
+@custom-variant theme-purple (&:where(.theme-purple, .theme-purple *));
+
+@theme {
+  --color-bg-primary: #3b4664;
+  --color-primary: white;
+  --color-bg-secondary: #181f32;
+  --color-bg-ternary: #252d44;
+  --color-bg-danger: #d13f30;
 }
