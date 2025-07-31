@@ -93,6 +93,7 @@ Use this section to outline areas that you want to continue focusing on in futur
 ### Useful resources
 
 - [Theming best practices in v4](https://github.com/tailwindlabs/tailwindcss/discussions/18471) - This taught me how to generate multiple themes in TailwindCSS 4
+- [Spanning columns](https://tailwindcss.com/docs/grid-column#spanning-columns) - This taught me make a div take 2 columns in a grid, in TailwindCSS
 
 ## Author
 
