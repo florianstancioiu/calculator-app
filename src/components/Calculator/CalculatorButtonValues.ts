@@ -1,113 +1,114 @@
 import { type Button } from "../Button/Button";
 
-import {
-  deleteExpression,
-  addExpression,
-  subtractExpression,
-  multiplyExpression,
-  divideExpression,
-  resetExpression,
-  equalsExpression,
-} from "../../utils/MathExpressions";
-
 export const buttons: Button[] = [
   {
     title: 7,
     bgColor: "primary",
     textColor: "bg-ternary",
+    isNumber: true,
   },
   {
     title: 8,
     bgColor: "primary",
     textColor: "bg-ternary",
+    isNumber: true,
   },
   {
     title: 9,
     bgColor: "primary",
     textColor: "bg-ternary",
+    isNumber: true,
   },
   {
-    title: "Del",
+    title: "del",
     bgColor: "bg-primary",
     textColor: "primary",
-    callback: deleteExpression,
+    isNumber: false,
   },
   {
     title: 4,
     bgColor: "primary",
     textColor: "bg-ternary",
+    isNumber: true,
   },
   {
     title: 5,
     bgColor: "primary",
     textColor: "bg-ternary",
+    isNumber: true,
   },
   {
     title: 6,
     bgColor: "primary",
     textColor: "bg-ternary",
+    isNumber: true,
   },
   {
     title: "+",
     bgColor: "primary",
     textColor: "bg-ternary",
-    callback: addExpression,
+    isNumber: false,
   },
   {
     title: 1,
     bgColor: "primary",
     textColor: "bg-ternary",
+    isNumber: true,
   },
   {
     title: 2,
     bgColor: "primary",
     textColor: "bg-ternary",
+    isNumber: true,
   },
   {
     title: 3,
     bgColor: "primary",
     textColor: "bg-ternary",
+    isNumber: true,
   },
   {
     title: "-",
     bgColor: "primary",
     textColor: "bg-ternary",
-    callback: subtractExpression,
+    isNumber: false,
   },
   {
     title: ".",
     bgColor: "primary",
     textColor: "bg-ternary",
+    isNumber: true,
   },
   {
     title: 0,
     bgColor: "primary",
     textColor: "bg-ternary",
+    isNumber: true,
   },
   {
     title: "/",
     bgColor: "primary",
     textColor: "bg-ternary",
-    callback: divideExpression,
+    isNumber: false,
   },
   {
     title: "x",
     bgColor: "primary",
     textColor: "bg-ternary",
-    callback: multiplyExpression,
+    isNumber: false,
   },
   {
-    title: "Reset",
+    title: "reset",
     bgColor: "bg-primary",
     textColor: "primary",
     spansTwoColumns: true,
-    callback: resetExpression,
+    isNumber: false,
   },
   {
     title: "=",
     bgColor: "bg-danger",
     textColor: "primary",
     spansTwoColumns: true,
-    callback: equalsExpression,
+    isNumber: false,
   },
 ];

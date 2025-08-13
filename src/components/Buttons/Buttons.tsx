@@ -3,13 +3,18 @@ import { type Button } from "../Button/Button";
 
 export type Buttons = {
   values: Button[];
+  onClickButton: (btn: Button) => void;
 };
 
-const Buttons = ({ values }: Buttons) => {
+const Buttons = ({ values, onClickButton }: Buttons) => {
   return (
     <div className="grid grid-cols-4 gap-[0.75rem] bg-bg-ternary p-[1.5rem]">
       {values.map((val) => (
-        <ButtonComponent key={val.title} {...val} />
+        <ButtonComponent
+          onClickButton={onClickButton}
+          key={val.title}
+          {...val}
+        />
       ))}
     </div>
   );

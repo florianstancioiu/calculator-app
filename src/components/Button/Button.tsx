@@ -3,7 +3,8 @@ export type Button = {
   bgColor: string;
   textColor: string;
   spansTwoColumns?: boolean;
-  callback?: (text: string) => void;
+  isNumber: boolean;
+  onClickButton?: (btn: Button) => void;
 };
 
 const Button = ({
@@ -11,25 +12,27 @@ const Button = ({
   bgColor,
   textColor,
   spansTwoColumns,
-  callback,
+  isNumber,
+  onClickButton,
 }: Button) => {
-  const onClickHandler = () => {
-    if (typeof callback === "function") {
-      callback("");
-
-      return;
-    }
-
-    // do something with the number
-  };
-
   return (
     <button
-      onClick={onClickHandler}
+      onClick={() => {
+        if (onClickButton) {
+          return onClickButton({
+            title,
+            bgColor,
+            textColor,
+            spansTwoColumns,
+            isNumber,
+            onClickButton,
+          } as Button);
+        }
+      }}
       className={`bg-${bgColor} text-${textColor} ${
         spansTwoColumns ? "col-span-2" : ""
       }
-      grid place-items-center cursor-pointer min-h-[3.75rem]
+      grid place-items-center cursor-pointer min-h-[3.75rem] capitalize
       `}
     >
       <span className="hidden text-bg-ternary"></span>
