@@ -89,7 +89,7 @@ const Calculator = () => {
   };
 
   return (
-    <div className="max-w-[20.375rem] mx-auto">
+    <div className="max-w-[20.375rem] mx-auto min-w-[20.375rem]">
       <Header />
       <Display primaryText={primaryText.trim()} secondaryText={``} />
       <Buttons onClickButton={onClickButtonHandler} values={buttons} />
