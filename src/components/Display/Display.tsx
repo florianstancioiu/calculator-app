@@ -1,13 +1,11 @@
 export type Display = {
-  primaryText: string;
-  secondaryText: string;
+  text: string;
 };
 
-const Display = ({ primaryText, secondaryText }: Display) => {
+const Display = ({ text }: Display) => {
   return (
     <div className="bg-bg-secondary text-right p-[1.5rem] mb-[1.5rem]">
-      <p>{primaryText}</p>
-      <p>{secondaryText}</p>
+      <p className="h-[1.5rem]">{text}</p>
     </div>
   );
 };
