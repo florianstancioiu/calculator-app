@@ -1,15 +1,16 @@
-import { render, screen } from "@testing-library/react";
+import { render, screen, fireEvent } from "@testing-library/react";
 import Calculator from "./Calculator";
 
 describe("<Calculator> component", () => {
   test("renders the component", () => {
     render(<Calculator />);
-    /*
 
-    numberButtons.push(screen.getByText(/0/i));
-    numberButtons.forEach((numberButton) =>
-      expect(numberButton).toBeInTheDocument()
-    );
-    */
+    const headerElement = screen.getByTestId("header-component");
+    const displayElement = screen.getByTestId("display-component");
+    const buttonsElement = screen.getByTestId("buttons-component");
+
+    expect(headerElement).toBeInTheDocument();
+    expect(displayElement).toBeInTheDocument();
+    expect(buttonsElement).toBeInTheDocument();
   });
 });
