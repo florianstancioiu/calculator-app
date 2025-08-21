@@ -17,6 +17,7 @@ const Button = ({
 }: Button) => {
   return (
     <button
+      data-testid={`button-${title}`}
       onClick={() => {
         if (onClickButton) {
           return onClickButton({

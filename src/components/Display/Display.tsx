@@ -8,7 +8,9 @@ const Display = ({ text }: Display) => {
       data-testid="display-component"
       className="bg-bg-secondary text-right p-[1.5rem] mb-[1.5rem]"
     >
-      <p className="h-[1.5rem]">{text}</p>
+      <p data-testid="display-text" className="h-[1.5rem]">
+        {text}
+      </p>
     </div>
   );
 };

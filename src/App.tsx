@@ -3,7 +3,9 @@ import Calculator from "./components/Calculator/Calculator";
 const App = () => {
   return (
     <>
-      <Calculator />
+      <main>
+        <Calculator />
+      </main>
     </>
   );
 };
