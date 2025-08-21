@@ -99,6 +99,8 @@ Use this section to outline areas that you want to continue focusing on in futur
 - [Capitalize text in TailwindCSS](https://tailwindcss.com/docs/text-transform) - I recollected how to turn reset text into Reset
 - [How can I convert a string into a math operator in javascript [duplicate]](https://stackoverflow.com/a/13077966/12159189) - This helped me tremendously in achieving the functionality of the calculator, I initially wanted to implement it using the `eval` function
 - [How do I chop/slice/trim off last character in string using Javascript?](https://stackoverflow.com/a/953274/12159189) - This helped me with the del button
+- [React - The Complete Guide 2025 (incl. Next.js, Redux) - Section 31: Testing React Apps (Unit Tests)](https://www.udemy.com/course/react-the-complete-guide-incl-redux) - This Udemy course by Maximilian Schwarzmüller helped me understand some concepts regarding React Testing Library
+- [ByTestId](https://testing-library.com/docs/queries/bytestid/) - This helped me test various parts of the components using react testing library (mainly the Calculator component)
 
 ## Author
 
