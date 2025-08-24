@@ -3,7 +3,7 @@ import { type Button } from "../Button/Button";
 
 export type Buttons = {
   values: Button[];
-  onClickButton: (btn: Button) => void;
+  onClickButton?: (btn: Button) => void;
 };
 
 const Buttons = ({ values, onClickButton }: Buttons) => {

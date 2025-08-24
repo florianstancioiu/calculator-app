@@ -6,8 +6,10 @@ describe("<Button> component", () => {
     render(
       <Button
         title="1"
-        bgColor="black"
-        textColor="white"
+        bgColor="bg-black"
+        bgColorSecondary="bg-grey"
+        bgColorHover="bg-red"
+        textColor="bg-white"
         spansTwoColumns={false}
         isNumber={true}
       />
