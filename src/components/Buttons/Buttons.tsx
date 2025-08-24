@@ -10,7 +10,7 @@ const Buttons = ({ values, onClickButton }: Buttons) => {
   return (
     <div
       data-testid="buttons-component"
-      className="grid grid-cols-4 gap-[0.75rem] bg-bg-ternary p-[1.5rem] rounded-[0.625rem]"
+      className="grid grid-cols-4 gap-[0.75rem] bg-ternary p-[1.5rem] rounded-[0.625rem]"
     >
       {values.map((val) => (
         <ButtonComponent

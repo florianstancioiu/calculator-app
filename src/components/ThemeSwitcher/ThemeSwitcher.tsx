@@ -52,10 +52,10 @@ const ThemeSwitcher = ({ onSwitch }: ThemeSwitcher) => {
         </div>
         <div
           onClick={switchClickHandler}
-          className="bg-bg-secondary w-[3.5rem] p-[0.3rem] rounded-full cursor-pointer"
+          className="bg-switch-bg w-[3.5rem] p-[0.3rem] rounded-full cursor-pointer"
         >
           <div
-            className={`transition-all w-[1rem] h-[1rem] bg-bg-danger rounded-full ml-[${activeSwitch}rem]`}
+            className={`transition-all w-[1rem] h-[1rem] bg-danger rounded-full ml-[${activeSwitch}rem]`}
           ></div>
           <span className="hidden ml-[1rem]"></span>
           <span className="hidden ml-[2rem]"></span>

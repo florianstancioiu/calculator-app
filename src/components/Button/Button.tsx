@@ -40,7 +40,7 @@ const Button = ({
           }
         }}
         className={`${bgColor} ${textColor} ${bgColorHover} transition-all
-      grid place-items-center cursor-pointer min-h-[3.75rem] uppercase select-none font-bold rounded-[0.5rem]
+      grid place-items-center cursor-pointer min-h-[3.75rem] uppercase select-none font-bold text-xl rounded-[0.5rem]
       `}
       >
         {title}
