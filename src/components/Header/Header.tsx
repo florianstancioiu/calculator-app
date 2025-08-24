@@ -29,7 +29,7 @@ const Header = () => {
   return (
     <header
       data-testid="header-component"
-      className="flex justify-between items-center pt-[1.75rem] mb-[2rem]"
+      className="flex justify-between items-center pt-[1.75rem] mb-[2rem] xs:pt-[5.875rem]"
     >
       <div>
         <h1 className="font-bold text-3xl">calc</h1>

@@ -92,7 +92,7 @@ Use this section to outline areas that you want to continue focusing on in futur
 
 ### Useful resources
 
-- [Theming best practices in v4](https://github.com/tailwindlabs/tailwindcss/discussions/18471) - This taught me how to generate multiple themes in TailwindCSS 4
+- ~~[Theming best practices in v4](https://github.com/tailwindlabs/tailwindcss/discussions/18471) - This taught me how to generate multiple themes in TailwindCSS 4~~ I ended up not using this, but the link is still useful
 - [Spanning columns](https://tailwindcss.com/docs/grid-column#spanning-columns) - This taught me make a div take 2 columns in a grid, in TailwindCSS
 - [Remove insignificant trailing zeros from a number?](https://stackoverflow.com/a/3613112/12159189) - Remove unneeded zeroes from the end of the number
 - [Dealing with float precision in Javascript [duplicate]](https://stackoverflow.com/a/11695730/12159189) - Trim the number of point digits of a floating number
