@@ -31,8 +31,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: [https://www.frontendmentor.io/solutions/calculator-app-with-react-typescript-and-react-testing-library-3x-gufRiIs](https://www.frontendmentor.io/solutions/calculator-app-with-react-typescript-and-react-testing-library-3x-gufRiIs)
+- Live Site URL: [https://florianstancioiu.github.io/calculator-app/](https://florianstancioiu.github.io/calculator-app/)
 
 ## My process
 
