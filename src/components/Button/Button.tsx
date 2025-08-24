@@ -1,6 +1,8 @@
 export type Button = {
   title: string | number;
   bgColor: string;
+  bgColorSecondary: string;
+  bgColorHover: string;
   textColor: string;
   spansTwoColumns?: boolean;
   isNumber: boolean;
@@ -10,36 +12,41 @@ export type Button = {
 const Button = ({
   title,
   bgColor,
+  bgColorSecondary,
+  bgColorHover,
   textColor,
   spansTwoColumns,
   isNumber,
   onClickButton,
 }: Button) => {
   return (
-    <button
-      data-testid={`button-${title}`}
-      onClick={() => {
-        if (onClickButton) {
-          return onClickButton({
-            title,
-            bgColor,
-            textColor,
-            spansTwoColumns,
-            isNumber,
-            onClickButton,
-          } as Button);
-        }
-      }}
-      className={`bg-${bgColor} text-${textColor} ${
+    <div
+      className={`${
         spansTwoColumns ? "col-span-2" : ""
-      }
-      grid place-items-center cursor-pointer min-h-[3.75rem] capitalize
-      `}
+      } rounded-[0.5rem] overflow-hidden ${bgColorSecondary}`}
     >
-      <span className="hidden text-bg-ternary"></span>
-      <span className="hidden bg-bg-danger"></span>
-      {title}
-    </button>
+      <div
+        data-testid={`button-${title}`}
+        onClick={() => {
+          if (onClickButton) {
+            return onClickButton({
+              title,
+              bgColor,
+              textColor,
+              spansTwoColumns,
+              isNumber,
+              onClickButton,
+            } as Button);
+          }
+        }}
+        className={`${bgColor} ${textColor} ${bgColorHover} transition-all
+      grid place-items-center cursor-pointer min-h-[3.75rem] uppercase select-none font-bold rounded-[0.5rem]
+      `}
+      >
+        {title}
+      </div>
+      <div className={`h-[0.25rem]`}></div>
+    </div>
   );
 };
 

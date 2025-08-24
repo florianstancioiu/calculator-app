@@ -5,8 +5,15 @@
 
 @theme {
   --color-bg-primary: #3b4664;
+  --color-bg-primary-faded: #404e75;
+  --color-bg-primary-hover: #a2b3e1;
   --color-primary: white;
   --color-bg-secondary: #181f32;
   --color-bg-ternary: #252d44;
   --color-bg-danger: #d13f30;
+  --color-bg-danger-faded: #96271c;
+  --color-bg-danger-hover: #f96c5b;
+  --color-grey-white: #eae3db;
+  --color-grey-white-faded: #b4a69b;
+  --color-grey-white-hover: #ffffff;
 }

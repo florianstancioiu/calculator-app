@@ -6,9 +6,9 @@ const Display = ({ text }: Display) => {
   return (
     <div
       data-testid="display-component"
-      className="bg-bg-secondary text-right p-[1.5rem] mb-[1.5rem]"
+      className="bg-bg-secondary text-right p-[1.5rem] mb-[1.5rem] rounded-[0.625rem] overflow-hidden inline-block align-middle w-full"
     >
-      <p data-testid="display-text" className="h-[1.5rem]">
+      <p data-testid="display-text" className="h-[1.875rem] text-3xl">
         {text}
       </p>
     </div>
