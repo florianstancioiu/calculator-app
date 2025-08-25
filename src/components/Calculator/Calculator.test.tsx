@@ -119,25 +119,25 @@ describe("<Calculator> component", () => {
 
     fireEvent.click(plusButton);
 
-    expect(displayText.innerHTML).toEqual("123.1 +");
+    expect(displayText.innerHTML).toEqual("123.1+");
 
     fireEvent.click(number0);
     fireEvent.click(pointButton);
     fireEvent.click(number1);
 
-    expect(displayText.innerHTML).toEqual("123.1 + 0.1");
+    expect(displayText.innerHTML).toEqual("123.1+0.1");
 
     fireEvent.click(deleteButton);
 
-    expect(displayText.innerHTML).toEqual("123.1 + 0.");
+    expect(displayText.innerHTML).toEqual("123.1+0.");
 
     fireEvent.click(deleteButton);
 
-    expect(displayText.innerHTML).toEqual("123.1 + 0");
+    expect(displayText.innerHTML).toEqual("123.1+0");
 
     fireEvent.click(deleteButton);
 
-    expect(displayText.innerHTML).toEqual("123.1 +");
+    expect(displayText.innerHTML).toEqual("123.1+");
 
     fireEvent.click(deleteButton);
 
