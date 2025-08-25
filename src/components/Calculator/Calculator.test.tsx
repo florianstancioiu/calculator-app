@@ -308,9 +308,7 @@ describe("<Calculator> component", () => {
     fireEvent.click(number2);
     fireEvent.click(equalButton);
 
-    // TODO: Update the code here so that equal should be -4
-    // currently, the Calculator doesn't work correctly with negative numbers
-    expect(+displayText.innerHTML).toEqual(4);
+    expect(+displayText.innerHTML).toEqual(-4);
   });
   */
 

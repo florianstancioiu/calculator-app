@@ -6,30 +6,32 @@ describe("<Buttons> component", () => {
   test("renders the component", () => {
     render(<Buttons values={buttons} />);
 
-    const numberButtons = [];
-    numberButtons.push(screen.getByText(/0/i));
-    numberButtons.push(screen.getByText(/1/i));
-    numberButtons.push(screen.getByText(/2/i));
-    numberButtons.push(screen.getByText(/3/i));
-    numberButtons.push(screen.getByText(/4/i));
-    numberButtons.push(screen.getByText(/5/i));
-    numberButtons.push(screen.getByText(/6/i));
-    numberButtons.push(screen.getByText(/7/i));
-    numberButtons.push(screen.getByText(/8/i));
-    numberButtons.push(screen.getByText(/9/i));
-    numberButtons.forEach(
-      (numberButton) => expect(numberButton).toBeInTheDocument
+    const numberButtons = [
+      screen.getByText(/0/i),
+      screen.getByText(/1/i),
+      screen.getByText(/2/i),
+      screen.getByText(/3/i),
+      screen.getByText(/4/i),
+      screen.getByText(/5/i),
+      screen.getByText(/6/i),
+      screen.getByText(/7/i),
+      screen.getByText(/8/i),
+      screen.getByText(/9/i),
+    ];
+    numberButtons.forEach((numberButton) =>
+      expect(numberButton).toBeInTheDocument()
     );
 
-    const mathButtons = [];
-    mathButtons.push(screen.getByText(/del/i));
-    mathButtons.push(screen.getByText(/\+/i));
-    mathButtons.push(screen.getByText(/-/i));
-    mathButtons.push(screen.getByText(/x/i));
-    mathButtons.push(screen.getByText(/reset/i));
-    mathButtons.push(screen.getByText(/=/i));
-    mathButtons.forEach(
-      (numberButton) => expect(numberButton).toBeInTheDocument
+    const mathButtons = [
+      screen.getByText(/del/i),
+      screen.getByText(/\+/i),
+      screen.getByText(/-/i),
+      screen.getByText(/x/i),
+      screen.getByText(/reset/i),
+      screen.getByText(/=/i),
+    ];
+    mathButtons.forEach((numberButton) =>
+      expect(numberButton).toBeInTheDocument()
     );
   });
 });

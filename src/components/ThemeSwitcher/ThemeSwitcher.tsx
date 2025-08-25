@@ -34,6 +34,7 @@ const ThemeSwitcher = ({ onSwitch }: ThemeSwitcher) => {
     <div className="flex justify-between items-end text-[0.875rem] select-none">
       <p
         onClick={switchClickHandler}
+        data-testid="theme-switcher-title"
         className="uppercase mr-[1.75rem] cursor-pointer"
       >
         Theme
@@ -52,6 +53,7 @@ const ThemeSwitcher = ({ onSwitch }: ThemeSwitcher) => {
         </div>
         <div
           onClick={switchClickHandler}
+          data-testid="theme-switcher-main"
           className="bg-switch-bg w-[3.5rem] p-[0.3rem] rounded-full cursor-pointer"
         >
           <div

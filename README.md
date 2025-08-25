@@ -51,23 +51,23 @@ Users should be able to:
 
 ### What I learned
 
-While watching the React tutorial from Udemy I learned some new stuff regarding unit testing and mocking existing functions in JavaScript.
+I learned how to use the React Testing Library to create unit tests and how to mock/simulate existing functions in JavaScript (though, I haven't used mocking in this project).
 
 ### Continued development
 
-1.  The calculator is not accessible to people that use only the keyboard to get around the application, I mean you can't use tab to move through the page, I would work on that.
+1.  The calculator is not accessible to people that use only the keyboard to get around the application, I mean you can't use the tab key to move through the page.
 2.  When I started writing the calculator functionality I missed a couple of things, one of them is to handle negative numbers, right now you can't insert negative numbers, only positive ones.
-3.  The other thing that I omited is the fact that you can't chain operations, so you can't do 2 x 2 x 2, you have to do 2 x 2 and then 4 x 2 to achieve the same thing, I would handle that as well.
+3.  The other thing that I omited is the fact that you can't chain operations, so you can't do 2 x 2 x 2, you have to do 2 x 2 and then 4 x 2 to achieve the same thing.
 
 ### Useful resources
 
 - ~~[Theming best practices in v4](https://github.com/tailwindlabs/tailwindcss/discussions/18471) - This taught me how to generate multiple themes in TailwindCSS 4~~ I ended up not using this, but the link is still useful
-- [Spanning columns](https://tailwindcss.com/docs/grid-column#spanning-columns) - This taught me make a div take 2 columns in a grid, in TailwindCSS
+- [Spanning columns](https://tailwindcss.com/docs/grid-column#spanning-columns) - This taught me how to make a div take 2 columns in a grid, in TailwindCSS
 - [Remove insignificant trailing zeros from a number?](https://stackoverflow.com/a/3613112/12159189) - Remove unneeded zeroes from the end of the number
 - [Dealing with float precision in Javascript [duplicate]](https://stackoverflow.com/a/11695730/12159189) - Trim the number of point digits of a floating number
-- [Capitalize text in TailwindCSS](https://tailwindcss.com/docs/text-transform) - I recollected how to turn reset text into Reset
+- [Capitalize text in TailwindCSS](https://tailwindcss.com/docs/text-transform) - Helped me turn `reset` text into `Reset` - capitalize
 - [How can I convert a string into a math operator in javascript [duplicate]](https://stackoverflow.com/a/13077966/12159189) - This helped me tremendously in achieving the functionality of the calculator, I initially wanted to implement it using the `eval` function
-- [How do I chop/slice/trim off last character in string using Javascript?](https://stackoverflow.com/a/953274/12159189) - This helped me with the del button
+- [How do I chop/slice/trim off last character in string using Javascript?](https://stackoverflow.com/a/953274/12159189) - This helped me with the delete button
 - [React - The Complete Guide 2025 (incl. Next.js, Redux) - Section 31: Testing React Apps (Unit Tests)](https://www.udemy.com/course/react-the-complete-guide-incl-redux) - This Udemy course by Maximilian Schwarzmüller helped me understand some concepts regarding React Testing Library
 - [ByTestId](https://testing-library.com/docs/queries/bytestid/) - This helped me test various parts of the components using react testing library (mainly the Calculator component)
 - [Trouble with Dynamic Color in Tailwind Component](https://stackoverflow.com/questions/76353036/trouble-with-dynamic-color-in-tailwind-component) - This helped me understand how to write dynamic colors in React so that Tailwind can process them
