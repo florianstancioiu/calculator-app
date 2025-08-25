@@ -45,6 +45,7 @@ const ThemeSwitcher = ({ onSwitch }: ThemeSwitcher) => {
             <p
               key={index}
               className="cursor-pointer"
+              data-testid={`theme-switcher-index-${index}`}
               onClick={() => switchNumberClickHandler(index)}
             >
               {index + 1}
