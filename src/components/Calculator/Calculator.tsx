@@ -12,7 +12,7 @@ const Calculator = () => {
   const [primaryNumber, setPrimaryNumber] = useState("");
   const [operator, setOperator] = useState("");
   const [secondaryNumber, setSecondaryNumber] = useState("");
-  const primaryText = `${primaryNumber} ${operator ?? ""} ${
+  const primaryText = `${primaryNumber}${operator ?? ""}${
     secondaryNumber ?? ""
   }`;
 
