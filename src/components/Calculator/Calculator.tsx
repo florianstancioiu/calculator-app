@@ -1,5 +1,4 @@
-import { useState } from "react";
-import { type Button } from "../Button/Button";
+import { useState, useEffect } from "react";
 import Header from "../Header/Header";
 
 import Display from "../Display/Display";
@@ -8,13 +7,20 @@ import { buttons } from "./CalculatorButtonValues";
 
 import { parseStringAsMath } from "../../utils/Math";
 
+export type KeyboardEvent = {
+  key: string;
+};
+
 const Calculator = () => {
   const [operations, setOperations] = useState("");
 
-  const onClickButtonHandler = (btn: Button) => {
-    const { title } = btn;
+  const onClickButtonHandler = (title: string) => {
+    let result: string | number;
 
-    let result: number | string = "error";
+    if (operations === "error" && !["del", "reset"].includes(title)) {
+      setOperations(title);
+      return;
+    }
 
     if (title === "reset") {
       setOperations("");
@@ -31,11 +37,15 @@ const Calculator = () => {
       return;
     }
 
-    setOperations((val) => `${val}${title}`);
+    if (title === "=" && operations.trim() === "") {
+      setOperations("");
+      return;
+    }
 
     if (title === "=") {
       try {
-        const updatedOperations = operations.replace(/x/gi, "*");
+        let updatedOperations = operations.replace(/x/gi, "*");
+        updatedOperations = updatedOperations.replace(/=/gi, "");
         result = parseStringAsMath(updatedOperations);
 
         if (isNaN(result)) {
@@ -54,8 +64,58 @@ const Calculator = () => {
         }
         setOperations("error");
       }
+      return;
     }
+
+    setOperations((val) => `${val}${title}`);
   };
+
+  useEffect(() => {
+    const keyDownEventHandler = (event: KeyboardEvent) => {
+      let key = event.key;
+
+      const allowedKeys = [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9",
+        ".",
+        "Backspace",
+        "Enter",
+        "+",
+        "-",
+        "*",
+        "/",
+        "=",
+      ];
+
+      if (allowedKeys.includes(key)) {
+        if (key === "Backspace") {
+          key = "del";
+        }
+
+        if (key === "Enter") {
+          key = "=";
+        }
+
+        if (key === "*") {
+          key = "x";
+        }
+
+        onClickButtonHandler(key);
+      }
+    };
+
+    document.addEventListener("keydown", keyDownEventHandler);
+
+    return () => document.removeEventListener("keydown", keyDownEventHandler);
+  }, [operations]);
 
   return (
     <div className="max-w-[20.375rem] mx-auto xs:max-w-[33.75rem]">
