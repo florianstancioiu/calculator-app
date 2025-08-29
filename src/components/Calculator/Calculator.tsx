@@ -48,7 +48,7 @@ const Calculator = () => {
         updatedOperations = updatedOperations.replace(/=/gi, "");
         result = parseStringAsMath(updatedOperations);
 
-        if (isNaN(result)) {
+        if (!isFinite(result)) {
           throw new Error("The string is not a valid math expression");
         }
 

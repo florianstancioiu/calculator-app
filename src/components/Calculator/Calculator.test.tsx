@@ -343,6 +343,42 @@ describe("<Calculator> component", () => {
     expect(displayText.innerHTML).toEqual("error");
   });
 
+  test("calculates 1 / 0 = error", () => {
+    render(<Calculator />);
+
+    const displayText = screen.getByTestId("display-text");
+    const divisionButton = screen.getByTestId("button-/");
+    const number0 = screen.getByTestId("button-0");
+    const number1 = screen.getByTestId("button-1");
+    const equalButton = screen.getByTestId("button-=");
+
+    fireEvent.click(number1);
+    fireEvent.click(divisionButton);
+    fireEvent.click(number0);
+    fireEvent.click(equalButton);
+
+    expect(displayText.innerHTML).toEqual("error");
+  });
+
+  test("calculates -1 / 0 = error", () => {
+    render(<Calculator />);
+
+    const displayText = screen.getByTestId("display-text");
+    const divisionButton = screen.getByTestId("button-/");
+    const minusButton = screen.getByTestId("button--");
+    const number0 = screen.getByTestId("button-0");
+    const number1 = screen.getByTestId("button-1");
+    const equalButton = screen.getByTestId("button-=");
+
+    fireEvent.click(minusButton);
+    fireEvent.click(number1);
+    fireEvent.click(divisionButton);
+    fireEvent.click(number0);
+    fireEvent.click(equalButton);
+
+    expect(displayText.innerHTML).toEqual("error");
+  });
+
   test("calculates 2 / 1 = 2", () => {
     render(<Calculator />);
 
