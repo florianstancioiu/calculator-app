@@ -32,7 +32,7 @@ const Header = () => {
       className="flex justify-between items-center pt-[1.75rem] mb-[2rem] xs:pt-[5.875rem]"
     >
       <div>
-        <h1 className="font-bold text-3xl">calc</h1>
+        <h1 className="font-bold text-3xl select-none">calc</h1>
       </div>
       <ThemeSwitcher onSwitch={onSwitchThemeHandler} />
     </header>

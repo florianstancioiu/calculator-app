@@ -21,6 +21,11 @@ const Calculator = () => {
       return;
     }
 
+    if (title === "del" && operations === "error") {
+      setOperations("");
+      return;
+    }
+
     if (title === "del") {
       setOperations((val) => val.slice(0, -1));
       return;
