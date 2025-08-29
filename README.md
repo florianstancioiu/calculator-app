@@ -56,8 +56,8 @@ I learned how to use the React Testing Library to create unit tests and how to m
 ### Continued development
 
 1.  The calculator is not accessible to people that use only the keyboard to get around the application, I mean you can't use the tab key to move through the page.
-2.  When I started writing the calculator functionality I missed a couple of things, one of them is to handle negative numbers, right now you can't insert negative numbers, only positive ones.
-3.  The other thing that I omited is the fact that you can't chain operations, so you can't do 2 x 2 x 2, you have to do 2 x 2 and then 4 x 2 to achieve the same thing.
+2.  ~~When I started writing the calculator functionality I missed a couple of things, one of them is to handle negative numbers, right now you can't insert negative numbers, only positive ones.~~ - It is done
+3.  ~~The other thing that I omited is the fact that you can't chain operations, so you can't do 2 x 2 x 2, you have to do 2 x 2 and then 4 x 2 to achieve the same thing.~~ It is done
 
 ### Useful resources
 
@@ -66,12 +66,13 @@ I learned how to use the React Testing Library to create unit tests and how to m
 - [Remove insignificant trailing zeros from a number?](https://stackoverflow.com/a/3613112/12159189) - Remove unneeded zeroes from the end of the number
 - [Dealing with float precision in Javascript [duplicate]](https://stackoverflow.com/a/11695730/12159189) - Trim the number of point digits of a floating number
 - [Capitalize text in TailwindCSS](https://tailwindcss.com/docs/text-transform) - Helped me turn `reset` text into `Reset` - capitalize
-- [How can I convert a string into a math operator in javascript [duplicate]](https://stackoverflow.com/a/13077966/12159189) - This helped me tremendously in achieving the functionality of the calculator, I initially wanted to implement it using the `eval` function
+- [How can I convert a string into a math operator in javascript [duplicate]](https://stackoverflow.com/a/13077966/12159189) - This helped me (initially, I used a different approach in a later update) in achieving the functionality of the calculator, I initially wanted to implement it using the `eval` function
 - [How do I chop/slice/trim off last character in string using Javascript?](https://stackoverflow.com/a/953274/12159189) - This helped me with the delete button
 - [React - The Complete Guide 2025 (incl. Next.js, Redux) - Section 31: Testing React Apps (Unit Tests)](https://www.udemy.com/course/react-the-complete-guide-incl-redux) - This Udemy course by Maximilian Schwarzmüller helped me understand some concepts regarding React Testing Library
 - [ByTestId](https://testing-library.com/docs/queries/bytestid/) - This helped me test various parts of the components using react testing library (mainly the Calculator component)
 - [Trouble with Dynamic Color in Tailwind Component](https://stackoverflow.com/questions/76353036/trouble-with-dynamic-color-in-tailwind-component) - This helped me understand how to write dynamic colors in React so that Tailwind can process them
 - [Test React component method is calling function pass as a prop](https://stackoverflow.com/questions/45867095/test-react-component-method-is-calling-function-pass-as-a-prop) - This helped me test a function passed as a prop in React
+- [Evaluating a string as a mathematical expression in JavaScript](https://stackoverflow.com/a/62402481/12159189) - Evaluate a string as a mathematical operation in JS
 
 ## Author
 

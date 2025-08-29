@@ -33,7 +33,7 @@ describe("<ThemeSwitcher> component", () => {
     expect(onSwitchHandler).toHaveBeenCalledWith(0);
   });
 
-  test("click on title switches active position", () => {
+  test("click on index text switches active position", () => {
     const onSwitchHandler = vi.fn();
 
     render(<ThemeSwitcher onSwitch={onSwitchHandler} />);
