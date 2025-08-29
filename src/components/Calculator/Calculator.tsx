@@ -6,92 +6,56 @@ import Display from "../Display/Display";
 import Buttons from "../Buttons/Buttons";
 import { buttons } from "./CalculatorButtonValues";
 
-import { mathOperations, isNumeric } from "../../utils/Math";
+import { parseStringAsMath } from "../../utils/Math";
 
 const Calculator = () => {
-  const [primaryNumber, setPrimaryNumber] = useState("");
-  const [operator, setOperator] = useState("");
-  const [secondaryNumber, setSecondaryNumber] = useState("");
-  const primaryText = `${primaryNumber}${operator ?? ""}${
-    secondaryNumber ?? ""
-  }`;
+  const [operations, setOperations] = useState("");
 
   const onClickButtonHandler = (btn: Button) => {
-    const { title, isNumber } = btn;
+    const { title } = btn;
 
-    if (operator === "" && secondaryNumber === "") {
-      setPrimaryNumber((val) => {
-        const newNumber = `${val ?? ""}${title}`;
-
-        return isNumeric(newNumber) ? newNumber : val;
-      });
-    } else {
-      setSecondaryNumber((val) => {
-        const newNumber = `${val ?? ""}${title}`;
-
-        return isNumeric(newNumber) ? newNumber : val;
-      });
-    }
+    let result: number | string = "error";
 
     if (title === "reset") {
-      setPrimaryNumber("");
-      setOperator("");
-      setSecondaryNumber("");
-    }
-
-    if (!isNumber && primaryNumber === "") {
-      return;
-    }
-
-    if (isNumber) {
+      setOperations("");
       return;
     }
 
     if (title === "del") {
-      if (secondaryNumber !== "") {
-        setSecondaryNumber((val) => val.slice(0, -1));
-        return;
-      }
-
-      if (operator !== "") {
-        setOperator((val) => val.slice(0, -1));
-        return;
-      }
-
-      if (primaryNumber !== "") {
-        setPrimaryNumber((val) => val.slice(0, -1));
-        return;
-      }
+      setOperations((val) => val.slice(0, -1));
+      return;
     }
+
+    setOperations((val) => `${val}${title}`);
 
     if (title === "=") {
-      if (primaryNumber === "" || secondaryNumber === "") {
-        return;
+      try {
+        const updatedOperations = operations.replace(/x/gi, "*");
+        result = parseStringAsMath(updatedOperations);
+
+        if (isNaN(result)) {
+          throw new Error("The string is not a valid math expression");
+        }
+
+        if (typeof result === "number" && !isNaN(result)) {
+          result = result.toFixed(2);
+        }
+
+        result = (+result).toString();
+        setOperations(result);
+      } catch (e) {
+        if (e instanceof Error) {
+          console.error(e.message);
+        }
+        setOperations("error");
       }
-
-      let result = mathOperations[operator](
-        primaryNumber,
-        secondaryNumber
-      ).toFixed(2);
-      result = (+result).toString();
-
-      setPrimaryNumber(result);
-      setOperator("");
-      setSecondaryNumber("");
-    }
-
-    if (operator === "") {
-      if (title !== "reset" && title !== "del") {
-        setOperator(title.toString());
-      }
-      return;
     }
   };
 
   return (
     <div className="max-w-[20.375rem] mx-auto xs:max-w-[33.75rem]">
       <Header />
-      <Display text={primaryText.trim()} />
+      <Display text={operations} />
       <Buttons onClickButton={onClickButtonHandler} values={buttons} />
     </div>
   );

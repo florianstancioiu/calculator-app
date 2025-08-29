@@ -292,7 +292,6 @@ describe("<Calculator> component", () => {
     expect(+displayText.innerHTML).toEqual(4);
   });
 
-  /*
   test("calculates 2 x -2 = -4", () => {
     render(<Calculator />);
 
@@ -310,7 +309,6 @@ describe("<Calculator> component", () => {
 
     expect(+displayText.innerHTML).toEqual(-4);
   });
-  */
 
   test("calculates 0 / 1 = 0", () => {
     render(<Calculator />);
@@ -329,7 +327,7 @@ describe("<Calculator> component", () => {
     expect(+displayText.innerHTML).toEqual(0);
   });
 
-  test("calculates 0 / 0 = NaN", () => {
+  test("calculates 0 / 0 = error", () => {
     render(<Calculator />);
 
     const displayText = screen.getByTestId("display-text");
@@ -342,7 +340,7 @@ describe("<Calculator> component", () => {
     fireEvent.click(number0);
     fireEvent.click(equalButton);
 
-    expect(displayText.innerHTML).toEqual("NaN");
+    expect(displayText.innerHTML).toEqual("error");
   });
 
   test("calculates 2 / 1 = 2", () => {
@@ -401,5 +399,63 @@ describe("<Calculator> component", () => {
     fireEvent.click(equalButton);
 
     expect(+displayText.innerHTML).toEqual(50);
+  });
+
+  test("calculates 1 + 1 + 1 = 3", () => {
+    render(<Calculator />);
+
+    const displayText = screen.getByTestId("display-text");
+    const additionButton = screen.getByTestId("button-+");
+    const number1 = screen.getByTestId("button-1");
+    const equalButton = screen.getByTestId("button-=");
+
+    fireEvent.click(number1);
+    fireEvent.click(additionButton);
+    fireEvent.click(number1);
+    fireEvent.click(additionButton);
+    fireEvent.click(number1);
+    fireEvent.click(equalButton);
+
+    expect(+displayText.innerHTML).toEqual(3);
+  });
+
+  test("calculates 2 + 2 x 2 = 6", () => {
+    render(<Calculator />);
+
+    const displayText = screen.getByTestId("display-text");
+    const additionButton = screen.getByTestId("button-+");
+    const multiplicationButton = screen.getByTestId("button-x");
+    const number2 = screen.getByTestId("button-2");
+    const equalButton = screen.getByTestId("button-=");
+
+    fireEvent.click(number2);
+    fireEvent.click(additionButton);
+    fireEvent.click(number2);
+    fireEvent.click(multiplicationButton);
+    fireEvent.click(number2);
+    fireEvent.click(equalButton);
+
+    expect(+displayText.innerHTML).toEqual(6);
+  });
+
+  test("calculates -2 - 2 x -2 = 2", () => {
+    render(<Calculator />);
+
+    const displayText = screen.getByTestId("display-text");
+    const multiplicationButton = screen.getByTestId("button-x");
+    const minusButton = screen.getByTestId("button--");
+    const number2 = screen.getByTestId("button-2");
+    const equalButton = screen.getByTestId("button-=");
+
+    fireEvent.click(minusButton);
+    fireEvent.click(number2);
+    fireEvent.click(minusButton);
+    fireEvent.click(number2);
+    fireEvent.click(multiplicationButton);
+    fireEvent.click(minusButton);
+    fireEvent.click(number2);
+    fireEvent.click(equalButton);
+
+    expect(+displayText.innerHTML).toEqual(2);
   });
 });
