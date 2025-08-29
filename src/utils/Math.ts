@@ -1,3 +1,3 @@
-export const parseStringAsMath = (str: string): number => {
-  return Function(`'use strict'; return (${str})`)();
+export const parseStringAsMath = (expression: string): number => {
+  return Function(`'use strict'; return (${expression})`)();
 };

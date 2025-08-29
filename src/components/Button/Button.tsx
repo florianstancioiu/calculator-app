@@ -6,7 +6,7 @@ export type Button = {
   textColor: string;
   spansTwoColumns?: boolean;
   isNumber: boolean;
-  onClickButton?: (btn: Button) => void;
+  onClickButton?: (title: string) => void;
 };
 
 const Button = ({
@@ -16,7 +16,6 @@ const Button = ({
   bgColorHover,
   textColor,
   spansTwoColumns,
-  isNumber,
   onClickButton,
 }: Button) => {
   return (
@@ -29,14 +28,7 @@ const Button = ({
         data-testid={`button-${title}`}
         onClick={() => {
           if (onClickButton) {
-            return onClickButton({
-              title,
-              bgColor,
-              textColor,
-              spansTwoColumns,
-              isNumber,
-              onClickButton,
-            } as Button);
+            return onClickButton(`${title}`);
           }
         }}
         className={`${bgColor} ${textColor} ${bgColorHover} transition-all
